@@ -8,7 +8,8 @@ function FancyCheckbox(props) {
   return (
       <div {...other} className={fancyClass} />
   );
-}mo
+}
+
 ReactDOM.render(
     <FancyCheckbox checked={true} onClick={console.log.bind(console)}>
       Hello world!
