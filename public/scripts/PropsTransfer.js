@@ -1,18 +1,22 @@
+var FancyCheckbox = React.createClass({
 
-function FancyCheckbox(props) {
-  var { checked, ...other } = props;
-    console.log(checked);
-    console.log(other);
-  var fancyClass = checked ? 'FancyChecked' : 'FancyUnchecked';
-  // `other` contains { onClick: console.log } but not the checked property
-  return (
-      <div {...other} className={fancyClass} />
-  );
+    render: function () {
+        var {checked, ...other} = this.props;
+        var fancyClass = checked ? 'FancyChecked' : 'FancyUnchecked';
+
+        return (
+            <div {...other} className={fancyClass}/>
+        );
+    }
+});
+
+function print() {
+    console.log('xxxxxxxxxxxx'+new Date());
 }
 
 ReactDOM.render(
-    <FancyCheckbox checked={true} onClick={console.log.bind(console)}>
-      Hello world!
+    <FancyCheckbox checked={true} onClick={print}>
+        Hello world!
     </FancyCheckbox>,
     document.getElementById('content')
 );
