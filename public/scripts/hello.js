@@ -52,7 +52,7 @@ var HelloWorld = React.createClass({
                 </p>
             </div>
         );
-    }
+    },
 });
 
 HelloWorld.print('dddddddd');
