@@ -1,5 +1,6 @@
 
-// webpack.config.js
+// webpack.config.js      react-transform-boilerplate
+
 var path = require("path");
 var webpack = require('webpack');
 
@@ -7,23 +8,23 @@ var publicPath = 'http://127.0.0.1:3000/';
 
 module.exports = {
     entry: './app/p2/main.js', //演示单入口文件
-    entry: [
-        // 写在入口文件之前
-        "webpack-dev-server/client?http://127.0.0.1:3000",
-        "webpack/hot/only-dev-server",
-        // 这里是你的入口文件
-        "./app/p2/main.js",
-    ],
+    // entry: [
+    //     // 写在入口文件之前
+    //     "webpack-dev-server/client?http://127.0.0.1:3000",
+    //     "webpack/hot/only-dev-server",
+    //     // 这里是你的入口文件
+    //     "./app/p2/main.js",
+    // ],
     output: {
         path: path.join(__dirname, 'out'),  //打包输出的路径
         filename: 'bundle.js',			  //打包后的名字
-        //publicPath: "/out/"				//html引用路径，在这里是本地地址。
-        publicPath: publicPath
+        publicPath: "/out/"				//html引用路径，在这里是本地地址。
+        //publicPath: publicPath
     },
-    // devServer: {
-    //     inline: true,
-    //     port: 3000
-    // },
+    devServer: {
+        inline: true,
+        port: 3000
+    },
     module: {
         loaders: [
             {test: /\.css$/, loader: "style!css"},
@@ -45,7 +46,7 @@ module.exports = {
 };
 
 // 添加插件
-plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
-]
+// plugins: [
+//     new webpack.HotModuleReplacementPlugin(),
+//     new webpack.NoErrorsPlugin()
+// ]
