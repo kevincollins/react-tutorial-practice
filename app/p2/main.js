@@ -7,4 +7,4 @@ import HelloMessage from './HelloMessage';
 
 var root = document.getElementById('content');
 
-ReactDOM.render(<HelloMessage name="aaad"/>, root);
+ReactDOM.render(<HelloMessage name="kevin"/>, root);

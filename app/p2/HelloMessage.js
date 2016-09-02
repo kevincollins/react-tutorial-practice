@@ -3,12 +3,20 @@
 
 import React from 'react';
 
+import Person from './Person';
+
+
 export default class HelloMessage extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
     }
     render() {
-        return <h1>Hello {this.props.name}</h1>;
+
+        const {name} = this.props;
+        const person = new Person(name);
+        const result = person.say(25);
+
+        return <h1>{result}</h1>;
     }
 }
 
